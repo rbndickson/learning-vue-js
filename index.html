@@ -28,6 +28,15 @@
       </span>
     </div>
 
+    <div id="app-3">
+      <!-- You can use v-if to toggle showing an element -->
+      <!-- Assign app3.seen to false to hide app-3 -->
+      <!-- Vue also provides a transtion effect system for when elements are -->
+      <!-- inserted, updated or removed -->
+
+      <span v-if="seen">Now you see me</span>
+    </div>
+
     <script>
       var app = new Vue({
         el: "#app",
@@ -40,6 +49,13 @@
         el: "#app-2",
         data: {
           message: "You loaded this page on " + new Date().toLocaleString()
+        }
+      });
+
+      var app3 = new Vue({
+        el: "#app-3",
+        data: {
+          seen: true
         }
       });
     </script>
