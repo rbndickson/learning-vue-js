@@ -12,11 +12,34 @@
       {{ message }}
     </div>
 
+    <div id="app-2">
+      <!-- v-bind is called a 'directive' -->
+      <!-- directives are prefixed with 'v-' to show they are Vue attributtes -->
+      <!-- v-bind tells the element that the title must be kept up to date with -->
+      <!-- the message property on the Vue instance -->
+
+      <!-- You can reassign app2.message in the JS console and it will update on -->
+      <!-- the screen: -->
+      <!-- app2.message = 'some new message' -->
+
+      <span v-bind:title="message">
+        Hover your mouse over me for a few seconds to see my dynamically bound
+        title!
+      </span>
+    </div>
+
     <script>
       var app = new Vue({
         el: "#app",
         data: {
           message: "Hello Vue!"
+        }
+      });
+
+      var app2 = new Vue({
+        el: "#app-2",
+        data: {
+          message: "You loaded this page on " + new Date().toLocaleString()
         }
       });
     </script>
